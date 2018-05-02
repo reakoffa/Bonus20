@@ -24,9 +24,15 @@ public class Bonus20 {
 		menu.put("hot dogs", 4.99);
 
 		System.out.println("Welcome to Anthony's Market!");
+		System.out.println("=================");
+		
 
 		do {
-			System.out.println("Here is our menu: " + menu);
+			System.out.println("Here is our menu: ");
+			for (String thing : menu.keySet()) {
+				System.out.printf("%1$-18s %2$-18s%n",thing,menu.get(thing));
+			}
+					
 			System.out.println();
 			String s = Validator.getString(scnr, "What item would you like to order? ");
 			if (menu.containsKey(s)) {
